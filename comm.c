@@ -10,11 +10,11 @@ each corresponding to 2000 samples or 125ms of sound */
 
 void sendToServer(double r80[]){
 	double r8[8], sum;
-	int i, j;
+	int i, j; //loop counter decleration
 	CURL *curl;
 	CURLcode res;
 	char post[1000];
-	for(i=0; i<8; i++){
+	for(i=0; i<8; i++){ //for loop calculate 8 pieces fast value
 		sum = 0;
 		for(j=0; j<10; j++){
 			sum += r80[j+i*10]*r80[j+i*10]*200;
