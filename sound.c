@@ -5,6 +5,8 @@
 //function difinition of displayBar()
 //this function open the "test.wav" file and read the 2nd part (data) of the file and the sample should be in S16_LE format, and there are 1600 of them
 //the function processes every 200 samples and calculate their RMS value
+
+// function of displayBar
 void displayBar(char filename[]){
 	int i, j;
 	FILE *fp;
@@ -32,6 +34,22 @@ void displayBar(char filename[]){
 	bar(dB, i);
 #endif	
 	}
+	gotoxy(0,0);
+	printf("%c[1;%dm",ESC, 37);
+	fflush(stdout);
+	printf("%s ", filename);
+	printf("%c[1;%dm",ESC, 32);
+	fflush(stdout);
+	printf("ch = %d ", myhdr.numChannels);
+	printf("%c[1;%dm",ESC, 36);
+	fflush(stdout);
+	printf("SR = %d ", myhdr.sampleRate);	
+	printf("%c[1;%dm",ESC, 35);
+	fflush(stdout);
+	printf("dur = %ds\n", myhdr.subchunk2Size/(myhdr.sampleRate*myhdr.bitsPerSample/8));
+	printf("%c[1;%dm",ESC, 37);
+	fflush(stdout);
+
 #ifdef COMM
 	sendToServer(rms_80);
 #endif

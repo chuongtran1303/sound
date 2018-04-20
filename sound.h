@@ -1,6 +1,7 @@
 //#define DEBUG
 // constant definitions
 #define SAMPLERATE 16000
+#define ESC 0x1b
 //header file for processing sound (WAV) 
 //define wav header
 typedef struct{

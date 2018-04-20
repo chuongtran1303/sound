@@ -1,5 +1,6 @@
 //contains screen manipulation functions, such as clearScreen(), gotox()
 // setColor(), etc
+
 #include "screen.h"
 #include <stdio.h>
 #include "comm.h"
