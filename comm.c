@@ -29,9 +29,9 @@ void sendToServer(double r80[]){
 		curl_easy_setopt(curl, CURLOPT_URL, URL);
 		curl_easy_setopt(curl, CURLOPT_POSTFIELDS, post);
 		res = curl_easy_perform(curl);
-		if(res != CURLE_OK)
+		if(res != CURLE_OK) //errors checking
 			fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-			curl_easy_cleanup(curl);
+			curl_easy_cleanup(curl); //cleanup
 	}
 	curl_global_cleanup();
 }
