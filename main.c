@@ -16,5 +16,6 @@ int main(void){
 	//break; // for testting, just run the loop once	
 	displayBar("test.wav");	
 	}
+	return 0;
 }
 
